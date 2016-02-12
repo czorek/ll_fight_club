@@ -13,6 +13,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'i18n-tasks'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'lograge'
+gem 'flag_icon_css_rails'
 
 group :development, :test do
   gem 'quiet_assets'
