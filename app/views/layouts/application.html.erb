@@ -17,13 +17,7 @@
           <li><%= link_to 'Link#2', '#' %></li>
           <li><%= link_to 'Link#3', '#' %></li>
 
-          <li>
-            <% if I18n.locale == I18n.default_locale %>
-              <%= link_to "Polish", params.merge({:locale => 'pl'}) %>
-            <% else %>
-              <%= link_to "English", params.merge({:locale=>'en'}) %>
-            <%end%>
-          </li>
+          <%= render 'layouts/language_switcher' %>
         </ul>
       </div>
     </div>
