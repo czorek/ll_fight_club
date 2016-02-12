@@ -20,5 +20,16 @@ module Rivals
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    config.i18n.enforce_available_locales = false
+    config.i18n.available_locales = [:en, :pl]
+    config.i18n.default_locale = :en
+
+    unless Rails.env.test?
+      log_level = String(ENV['LOG_LEVEL'] || "info").upcase
+      config.logger = Logger.new(STDOUT)
+      config.logger.level = Logger.const_get(log_level)
+      config.log_level = log_level
+      config.lograge.enabled = true
+    end
   end
 end
