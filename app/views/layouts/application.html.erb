@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Rivals</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Rivals</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
 
-<%= yield %>
+  <body>
+    <div id="header" class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <a href="<%= root_url %>" class="navbar-brand">LOGO goes here </a>
 
-</body>
+        <ul class="nav nav-pills navbar-nav navbar-right">
+          <li><%= link_to 'Link#1', '#' %></li>
+          <li><%= link_to 'Link#2', '#' %></li>
+          <li><%= link_to 'Link#3', '#' %></li>
+        </ul>
+      </div>
+    </div>
+
+  <%= yield %>
+
+  </body>
 </html>

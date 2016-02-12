@@ -12,8 +12,10 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'i18n-tasks'
 gem 'bootstrap-sass', '~> 3.3.6'
+gem 'lograge'
 
 group :development, :test do
+  gem 'quiet_assets'
   gem 'better_errors'
   gem 'rspec-rails'
   gem 'capybara'
