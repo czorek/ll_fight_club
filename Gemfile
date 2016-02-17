@@ -11,11 +11,14 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'i18n-tasks'
-gem 'bootstrap-sass', '~> 3.3.6'
 gem 'lograge'
 gem 'flag_icon_css_rails'
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'react-rails', '~> 1.6.0'
+
 gem 'devise'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
 
 group :development, :test do
   gem 'quiet_assets'
