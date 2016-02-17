@@ -14,15 +14,27 @@
 
         <ul class="nav nav-pills navbar-nav navbar-right">
           <li><%= link_to 'Link#1', '#' %></li>
-          <li><%= link_to 'Link#2', '#' %></li>
-          <li><%= link_to 'Link#3', '#' %></li>
+
+          <% if current_user %>
+            <li><%= link_to t(".header.sign.out"), destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to t(".header.sign.in"), new_user_session_path %></li>
+            <li><%= link_to t(".header.sign.up"), new_user_registration_path %></li>
+          <% end %>
 
           <%= render 'layouts/language_switcher' %>
         </ul>
       </div>
     </div>
 
-  <%= yield %>
+    <div class="container main-content">
+      <div class="messages">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      </div>
 
+      <%= yield %>
+
+    </div>
   </body>
 </html>

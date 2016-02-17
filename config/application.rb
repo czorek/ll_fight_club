@@ -23,6 +23,7 @@ module Rivals
     config.i18n.enforce_available_locales = false
     config.i18n.available_locales = [:en, :pl]
     config.i18n.default_locale = :en
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
 
     unless Rails.env.test?
       log_level = String(ENV['LOG_LEVEL'] || "info").upcase

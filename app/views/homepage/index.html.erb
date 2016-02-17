@@ -1,7 +1,9 @@
 <div id="welcome-content" class="container">
   <div id="headers">
-    <h1><%= t("homepage.main_header") %></h1>
-    <h4><%= t("homepage.subheader") %></h4>
+    <h1><%= t(".main_header") %></h1>
+    <h4><%= t(".subheader") %></h4>
   </div>
-  <p class="btn btn-primary"><%= t("homepage.register") %></p>
+  <%= link_to new_user_registration_path do %>
+    <p class="btn btn-primary" id="register-button"><%= t(".register") %></p>
+  <% end %>
 </div>

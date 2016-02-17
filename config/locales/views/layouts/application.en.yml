@@ -1,0 +1,8 @@
+en:
+  layouts:
+    application:
+      header:
+        sign:
+          in: Sign in
+          up: Sign up
+          out: Sign out
