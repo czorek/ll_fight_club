@@ -25,7 +25,9 @@ module Rivals
     config.i18n.default_locale = :en
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
 
-    config.web_console.development_only = false
+    config.generators do |g|
+      g.test_framework :rspec
+    end
 
     unless Rails.env.test?
       log_level = String(ENV['LOG_LEVEL'] || "info").upcase

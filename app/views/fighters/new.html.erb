@@ -1,0 +1,6 @@
+<%= simple_form_for @fighter do |f| %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :description, as: :text %>
+  <%= f.button :submit %>
+<% end %>

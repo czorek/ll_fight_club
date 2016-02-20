@@ -15,6 +15,7 @@ gem 'lograge'
 gem 'flag_icon_css_rails'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'react-rails', '~> 1.6.0'
+gem 'simple_form'
 
 gem 'devise'
 gem 'devise-i18n'
