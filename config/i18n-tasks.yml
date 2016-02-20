@@ -3,7 +3,7 @@
 # The "main" locale.
 base_locale: en
 ## All available locales are inferred from the data by default. Alternatively, specify them explicitly:
-# locales: [es, fr]
+locales: [en, pl]
 ## Reporting locale, default: en. Available: en, ru.
 # internal_locale: en
 
@@ -16,9 +16,9 @@ data:
   # Locale files or `File.find` patterns where translations are read from:
   read:
     ## Default:
-    # - config/locales/%{locale}.yml
+    - config/locales/%{locale}.yml
     ## More files:
-    # - config/locales/**/*.%{locale}.yml
+    - config/locales/**/*.%{locale}.yml
     ## Another gem (replace %#= with %=):
     # - "<%#= %x[bundle show vagrant].chomp %>/templates/locales/%{locale}.yml"
 
@@ -31,7 +31,7 @@ data:
     # - config/locales/%{locale}.yml
 
   ## Specify the router (see Readme for details). Valid values: conservative_router, pattern_router, or a custom class.
-  # router: convervative_router
+  router: convervative_router
 
   yaml:
     write:
@@ -83,9 +83,9 @@ search:
 #   api_key: "AbC-dEf5"
 
 ## Do not consider these keys missing:
-# ignore_missing:
+ignore_missing:
 # - 'errors.messages.{accepted,blank,invalid,too_short,too_long}'
-# - '{devise,simple_form}.*'
+- '{devise,simple_form}.*'
 
 ## Consider these keys used:
 # ignore_unused:
