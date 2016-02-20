@@ -20,6 +20,10 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 
+group :development, :test do
+  gem 'web-console', '~> 2.0'
+end
+
 group :development do
   gem 'quiet_assets'
   gem 'better_errors'
@@ -28,7 +32,6 @@ group :development do
 end
 
 group :test do
-  gem 'web-console', '~> 2.0'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'rspec-rails'
   gem 'capybara'
