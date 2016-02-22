@@ -2,3 +2,4 @@ pl:
   fighters:
     create:
       created: "Stworzyłeś zawodnika!"
+      not_saved: "Nie udało się zapisać zawodnika."

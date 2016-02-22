@@ -1,5 +1,18 @@
 ---
 pl:
+  activerecord:
+    errors:
+      models:
+        fighter:
+          attributes:
+            first_name:
+              blank: 'nie może być puste'
+            last_name:
+              blank: 'nie może być puste'
+            description:
+              blank: 'nie może być pusty'
+            avatar:
+              blank: 'nie może być pusty'
   errors:
     messages:
       carrierwave_processing_error: "Nie udało się zmienić rozmiaru zdjęcia."

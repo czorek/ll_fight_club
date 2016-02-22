@@ -1,0 +1,5 @@
+en:
+  fighters:
+    create:
+      created: "Fighter created!"
+      not_saved: "Fighter was not saved."

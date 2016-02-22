@@ -1,8 +1,0 @@
-pl:
-  layouts:
-    application:
-      header:
-        sign:
-          in: Zaloguj się
-          up: Rejestracja
-          out: Wyloguj

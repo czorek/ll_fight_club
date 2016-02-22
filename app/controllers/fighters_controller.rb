@@ -14,9 +14,9 @@ class FightersController < ApplicationController
   def create
     @fighter = current_user.fighters.build(fighter_params)
     if @fighter.save
-      redirect_to fighter_path(@fighter), notice: t("fighter.created")
+      redirect_to fighter_path(@fighter), notice: t(".created")
     else
-      # flash.now(alert: t("fighter.not_saved"))
+      flash.now[:alert] = t(".not_saved")
       render :new
     end
   end
