@@ -4,3 +4,4 @@ pl:
       main_header: Witamy w Fight Club
       register: Rejestracja
       subheader: Zwyciężaj, przegrywaj, po prostu walcz!
+      fight: 'Walcz!'

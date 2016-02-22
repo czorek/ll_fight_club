@@ -3,7 +3,14 @@
     <h1><%= t(".main_header") %></h1>
     <h4><%= t(".subheader") %></h4>
   </div>
-  <%= link_to new_user_registration_path do %>
-    <p class="btn btn-primary" id="register-button"><%= t(".register") %></p>
+
+  <% if current_user %>
+    <%= link_to '#' do %>
+      <p class="btn btn-danger" id="fight-button"><%= t(".fight") %></p>
+    <% end %>
+  <% else %>
+    <%= link_to new_user_registration_path do %>
+      <p class="btn btn-primary" id="register-button"><%= t(".register") %></p>
+    <% end %>
   <% end %>
 </div>
