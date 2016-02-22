@@ -1,0 +1,14 @@
+<h2><%= t(".your_fighters") %></h2>
+<table class='table table-bordered table-condensed'>
+  <tr>
+    <th>Avatar</th>
+    <th><%= t(".name") %></th>
+  </tr>
+
+  <% @fighters.each do |fighter| %>
+    <tr>
+      <td><%= image_tag(fighter.avatar.thumb) %></td>
+      <td><%= link_to fighter.name, fighter_path(fighter) %></td>
+    </tr>
+  <% end %>
+</table>

@@ -3,3 +3,8 @@ pl:
     create:
       created: "Stworzyłeś zawodnika!"
       not_saved: "Nie udało się zapisać zawodnika."
+    index:
+      your_fighters: "Twoi wojownicy"
+      name: "Imię"
+      avatar: "Avatar"
+

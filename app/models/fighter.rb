@@ -7,4 +7,8 @@ class Fighter < ActiveRecord::Base
   validates :skills, length: { minimum: 2, maximum: 8 }
 
   mount_uploader :avatar, AvatarUploader
+
+  def name
+    "#{first_name} #{last_name}"
+  end
 end

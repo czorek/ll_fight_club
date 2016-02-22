@@ -18,6 +18,16 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
-header {
+body {
+  background-image: url("http://wallpoper.com/images/00/22/28/72/dark-blood_00222872.jpg");
+}
+
+header.navbar {
+  background-color: #F46262;
+  border-bottom: 0;
   border-radius: 0;
+}
+
+.main-content {
+  background-color: #ffffff;
 }

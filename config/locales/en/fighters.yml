@@ -3,3 +3,7 @@ en:
     create:
       created: "Fighter created!"
       not_saved: "Fighter was not saved."
+    index:
+      your_fighters: "Your fighters"
+      name: "Name"
+      avatar: "Avatar"
