@@ -1,8 +1,10 @@
 en:
   layouts:
     application:
+      title: Fight Club
       header:
         sign:
           in: Sign in
           up: Sign up
           out: Sign out
+        fighters: Fighters

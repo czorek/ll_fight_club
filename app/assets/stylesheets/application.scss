@@ -23,11 +23,38 @@ body {
 }
 
 header.navbar {
-  background-color: #F46262;
   border-bottom: 0;
   border-radius: 0;
 }
 
-.main-content {
+footer.navbar {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 0;
+  width: 100%;
+  border-radius: 0;
+
+  span {
+    margin: 15px 100px 0 0;
+    float: right;
+    color: #9d9d85;
+  }
+}
+
+#main-content {
+  position: relative;
+  margin-top: 30px;
+  padding: 0 20px 20px 20px;
   background-color: #ffffff;
+
+  h2 {
+    margin-top: -20px;
+  }
+}
+
+.navbar-brand {
+  img {
+    margin: -8px 0 0 15px;
+    height: 40px;
+  }
 }

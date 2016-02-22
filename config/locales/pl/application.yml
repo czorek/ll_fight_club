@@ -1,8 +1,10 @@
 pl:
   layouts:
     application:
+      title: Fight Club
       header:
         sign:
           in: Zaloguj się
           up: Rejestracja
           out: Wyloguj
+        fighters: Zawodnicy

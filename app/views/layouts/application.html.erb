@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Rivals</title>
+    <title><%= t(".title") %></title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
-    <header class="navbar navbar-default navbar-static-top">
+    <header class="navbar navbar-inverse navbar-static-top">
       <div class="container">
-        <a href="<%= root_url %>" class="navbar-brand">LOGO goes here </a>
+        <%= link_to root_url do %>
+          <div class="navbar-brand">
+            <span><%= image_tag("logo.png") %> FIGHT CLUB</span>
+          </div>
+        <% end %>
 
         <ul class="nav nav-pills navbar-nav navbar-right">
-          <li><%= link_to 'Link#1', '#' %></li>
+          <li><%= link_to t(".header.fighters"), fighters_path %></li>
 
           <% if current_user %>
             <li><%= link_to t(".header.sign.out"), destroy_user_session_path, method: :delete %></li>
@@ -27,14 +31,19 @@
       </div>
     </header>
 
-    <div class="container main-content">
-      <div class="messages">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+    <div class="container">
+      <div id='main-content'>
+        <div class="messages">
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+        </div>
+
+        <%= yield %>
+
       </div>
-
-      <%= yield %>
-
     </div>
+    <footer class="navbar navbar-inverse">
+      <span>Water graphic by <a href="http://www.freepik.com/">Freepik</a> from <a href="http://www.flaticon.com/">Flaticon</a> is licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a>. Made with <a href="http://logomakr.com" title="Logo Maker">Logo Maker</a></span>
+    </footer>
   </body>
 </html>
