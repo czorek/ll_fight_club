@@ -2,5 +2,10 @@
   <%= f.input :first_name %>
   <%= f.input :last_name %>
   <%= f.input :description, as: :text %>
+
+  <%= image_tag(@fighter.avatar_url) if @fighter.avatar? %>
+  <%= f.input :avatar, as: :file %>
+  <%= f.hidden_field :avatar_cache %>
+
   <%= f.button :submit %>
 <% end %>
