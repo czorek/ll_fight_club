@@ -1,9 +1,0 @@
----
-pl:
-  errors:
-    messages:
-      carrierwave_processing_error: "Nie udało się zmienić rozmiaru zdjęcia."
-      carrierwave_integrity_error: "Nie jest zdjęciem."
-      carrierwave_download_error: "Nie udało się ściągnąć zdjęcia."
-      extension_whitelist_error: "Niedopuszczalny format %{extension}, dozwolone są: %{allowed_types}"
-      extension_blacklist_error: "Niedopuszczalny format %{extension}, pozostałe to: %{prohibited_types}"
