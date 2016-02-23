@@ -1,6 +1,8 @@
 class Fighter < ActiveRecord::Base
   belongs_to :user
   has_many :skills
+  has_many :won_fights, class_name: 'Fight', foreign_key: 'winner_id'
+  has_many :lost_fights, class_name: 'Fight', foreign_key: 'loser_id'
 
   validates :skills, length: { minimum: 2, maximum: 8 }
   validates :first_name, :last_name, :description, :avatar, :experience, presence: true
