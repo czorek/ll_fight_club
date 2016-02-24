@@ -18,8 +18,14 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   background-image: url("http://wallpoper.com/images/00/22/28/72/dark-blood_00222872.jpg");
+  margin-bottom: 60px;
 }
 
 header.navbar {
@@ -27,11 +33,12 @@ header.navbar {
   border-radius: 0;
 }
 
-footer.navbar {
-  position: relative;
+.footer {
+  position: absolute;
   bottom: 0;
   margin-bottom: 0;
   width: 100%;
+  height: 60px;
   border-radius: 0;
 
   span {

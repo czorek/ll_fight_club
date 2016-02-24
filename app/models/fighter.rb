@@ -7,6 +7,7 @@ class Fighter < ActiveRecord::Base
   validates :skills, length: { minimum: 2, maximum: 8 }
   validates :first_name, :last_name, :description, :avatar, :experience, presence: true
   validates :experience, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :level, numericality: { only_integer: true }
 
   before_validation :assign_starter_skills
 

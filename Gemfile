@@ -39,5 +39,7 @@ group :test do
   gem 'shoulda-matchers', '~> 3.1'
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
 end
 

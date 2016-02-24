@@ -24,6 +24,7 @@ module Rivals
     config.i18n.available_locales = [:en, :pl]
     config.i18n.default_locale = :en
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+    config.web_console.development_only = false
 
     config.generators do |g|
       g.test_framework :rspec
