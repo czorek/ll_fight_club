@@ -11,6 +11,8 @@ class Fighter < ActiveRecord::Base
 
   before_validation :assign_starter_skills
 
+  scope :possible_opponents, -> { where(user != current_user) }
+
   mount_uploader :avatar, AvatarUploader
 
   def name

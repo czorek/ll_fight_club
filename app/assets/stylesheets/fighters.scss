@@ -1,3 +1,46 @@
 // Place all the styles related to the Fighters controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#fighters-header {
+  text-align: center;
+}
+
+#fighters-index-table {
+  width: 80%;
+  margin: 0 auto 0 auto;
+
+  * {
+    text-align: center;
+  }
+
+  .fighters-name {
+    margin: 15px 0 15px 0;
+    font-size: 20px;
+    color: #222222;
+  }
+}
+
+.fighters-skills-table {
+  width: 30%;
+  float: left;
+}
+
+.fighters-stats-table {
+  width: 30%;
+  float: left;
+  margin-left: 30px;
+}
+
+#fighters-avatar-large {
+  float: left;
+  width: 25%;
+}
+
+#fight-button {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  width: 100px;
+  margin-top: 20px;
+}

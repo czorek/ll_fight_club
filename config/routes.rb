@@ -11,5 +11,6 @@ Rails.application.routes.draw do
 
     resources :fighters
     resources :fights, only: [:new, :create, :show]
+    get 'fights/select_fighters', to: 'fights#select_fighters', as: 'select_fighters'
   end
 end

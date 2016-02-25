@@ -1,10 +1,16 @@
 pl:
   fighters:
     create:
-      created: "Stworzyłeś zawodnika!"
-      not_saved: "Nie udało się zapisać zawodnika."
+      created: Stworzyłeś zawodnika!
+      not_saved: Nie udało się zapisać zawodnika.
     index:
-      your_fighters: "Twoi zawodnicy"
-      name: "Imię"
-      avatar: "Avatar"
+      your_fighters: Twoi zawodnicy
+      name: Imię
+      avatar: Avatar
+      fight: Walcz!
+    show:
+      skill: Umiejętność
+      level: Poziom
+      fights_won: Wygrane walki
+      fights_lost: Przegrane walki
 

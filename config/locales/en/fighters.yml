@@ -1,9 +1,16 @@
 en:
   fighters:
     create:
-      created: "Fighter created!"
-      not_saved: "Fighter was not saved."
+      created: Fighter created!
+      not_saved: Fighter was not saved.
     index:
-      your_fighters: "Your fighters"
-      name: "Name"
-      avatar: "Avatar"
+      your_fighters: Your fighters
+      name: Name
+      avatar: Avatar
+      fight: Fight!
+    show:
+      skill: Umiejętność
+      level: Poziom
+      fights_won: Fights won
+      fights_lost: Fights lost
+

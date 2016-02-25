@@ -1,5 +1,5 @@
-<h2><%= t(".your_fighters") %></h2>
-<table class='table table-bordered table-condensed'>
+<h2 id='fighters-header'><%= t(".your_fighters") %></h2>
+<table id='fighters-index-table' class='table table-bordered table-condensed'>
   <tr>
     <th>Avatar</th>
     <th><%= t(".name") %></th>
@@ -8,7 +8,12 @@
   <% @fighters.each do |fighter| %>
     <tr>
       <td><%= image_tag(fighter.avatar.thumb) %></td>
-      <td><%= link_to fighter.name, fighter_path(fighter) %></td>
+      <td><span class='fighters-name'><%= link_to fighter.name, fighter_path(fighter) %></span></td>
+      <td>
+        <%= link_to select_fighters_path(selected_fighter: fighter) do %>
+          <button class='btn btn-danger'><%= t(".fight") %></button>
+        <% end %>
+      </td>
     </tr>
   <% end %>
 </table>
