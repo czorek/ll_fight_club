@@ -32,7 +32,6 @@
     </div>
   <% end %>
 
-  <h2 id='versus'>VS.</h2>
     <div id="available-opponents-table">
       <h3><%= t('.available_opponents') %></h3>
       <table class="table table-condensed">
@@ -53,5 +52,8 @@
         <% end %>
       </table>
     </div>
-  <%= f.button :submit %>
+  <div id="fight-new">
+    <h2 id='versus'>VS.</h2>
+    <%= f.button t("fighters.index.fight"), class: 'btn btn-danger' %>
+  </div>
 <% end %>

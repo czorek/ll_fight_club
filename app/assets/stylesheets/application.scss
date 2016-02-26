@@ -57,10 +57,7 @@ header.navbar {
   margin-top: 30px;
   padding: 0 20px 20px 20px;
   background-color: #ffffff;
-
-  h2 {
-    margin-top: -20px;
-  }
+  margin-top: 20px;
 }
 
 .navbar-brand {
@@ -68,4 +65,16 @@ header.navbar {
     margin: -8px 0 0 15px;
     height: 40px;
   }
+}
+
+.alert {
+  background-color: #E89EB8;
+  font-size: 18px;
+  text-align: center;
+}
+
+.notice {
+  background-color: #9EE8BD;
+  font-size: 18px;
+  text-align: center;
 }

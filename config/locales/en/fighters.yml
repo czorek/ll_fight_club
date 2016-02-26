@@ -1,6 +1,7 @@
 en:
   fighters:
     create:
+      create: Create a fighter
       created: Fighter created!
       not_saved: Fighter was not saved.
     index:

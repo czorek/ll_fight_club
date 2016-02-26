@@ -10,3 +10,17 @@
 #available-fighters-table {
   width: 35%;
 }
+
+#available-opponents-table {
+  margin-top: 0;
+}
+
+#fight-new {
+  position: absolute;
+  bottom: 30%;
+  left: 45%;
+
+  h2 {
+    margin: 0 0 100px 10px;
+  }
+}

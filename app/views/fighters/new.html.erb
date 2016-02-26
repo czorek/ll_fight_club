@@ -1,4 +1,5 @@
 <%= simple_form_for @fighter do |f| %>
+  <h2 id='create-header'><%= t('fighters.create.create') %></h2>
   <%= f.input :first_name %>
   <%= f.input :last_name %>
   <%= f.input :description, as: :text %>

@@ -1,6 +1,7 @@
 pl:
   fighters:
     create:
+      create: Stwórz zawodnika
       created: Stworzyłeś zawodnika!
       not_saved: Nie udało się zapisać zawodnika.
     index:

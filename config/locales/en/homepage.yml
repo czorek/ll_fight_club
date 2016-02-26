@@ -1,6 +1,7 @@
 en:
   homepage:
     index:
+      or: or
       main_header: Welcome to Fight Club
       subheader: Win or Lose, no matter, just fight!
       register: Register

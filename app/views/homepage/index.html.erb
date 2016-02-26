@@ -8,6 +8,10 @@
     <%= link_to new_fight_path do %>
       <p class="btn btn-danger index-button"><%= t(".fight") %></p>
     <% end %>
+      <span><%= t('.or') %></span>
+      <%= link_to new_fighter_path do %>
+        <p class="btn btn-info"><%= t("fighters.create.create") %></p>
+      <% end %>
   <% else %>
     <%= link_to new_user_registration_path do %>
       <p class="btn btn-primary index-button"><%= t(".register") %></p>
