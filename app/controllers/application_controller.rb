@@ -15,10 +15,10 @@ class ApplicationController < ActionController::Base
   end
 
   def preselected_fighter
-    @preselected_fighter ||= current_user.fighters.find(params[:selected_fighter])
+    @preselected_fighter ||= current_user.fighters.find(params[:selected_fighter]) if params[:selected_fighter]
   end
 
   def preselected_opponent
-    @preselected_opponent ||= Fighter.find(params[:selected_opponent])
+    @preselected_opponent ||= Fighter.find(params[:selected_opponent]) if params[:selected_opponent]
   end
 end

@@ -1,0 +1,4 @@
+pl:
+  fights:
+    select_fighters:
+      available_fighters: Dostępni zawodnicy

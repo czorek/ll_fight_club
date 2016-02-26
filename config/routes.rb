@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     devise_for :users
 
     resources :fighters
-    resources :fights, only: [:new, :create, :show]
     get 'fights/select_fighters', to: 'fights#select_fighters', as: 'select_fighters'
+    resources :fights, only: [:new, :create, :show]
   end
 end

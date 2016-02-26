@@ -5,12 +5,12 @@
   </div>
 
   <% if current_user %>
-    <%= link_to '#' do %>
-      <p class="btn btn-danger" id="fight-button"><%= t(".fight") %></p>
+    <%= link_to new_fight_path do %>
+      <p class="btn btn-danger index-button"><%= t(".fight") %></p>
     <% end %>
   <% else %>
     <%= link_to new_user_registration_path do %>
-      <p class="btn btn-primary" id="register-button"><%= t(".register") %></p>
+      <p class="btn btn-primary index-button"><%= t(".register") %></p>
     <% end %>
   <% end %>
 </div>
