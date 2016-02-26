@@ -3,12 +3,14 @@
   <tr>
     <th><%= t(".avatar") %></th>
     <th><%= t(".name") %></th>
+    <th><%= t(".level") %></th>
   </tr>
 
   <% @fighters.each do |fighter| %>
     <tr>
       <td><%= image_tag(fighter.avatar.thumb) %></td>
       <td><span class='fighters-name'><%= link_to fighter.name, fighter_path(fighter) %></span></td>
+      <td><%= fighter.level %></td>
       <td>
         <%= link_to new_fight_path(selected_fighter: fighter) do %>
           <button class='btn btn-danger'><%= t(".fight") %></button>

@@ -10,7 +10,7 @@ class Fighter < ActiveRecord::Base
   validates :level, numericality: { only_integer: true }
 
   before_validation :assign_starter_skills
-  after_save :check_for_level_up
+  before_save :check_for_level_up, if: lambda { |f| f.experience_changed? }
 
   mount_uploader :avatar, AvatarUploader
 
@@ -30,15 +30,15 @@ class Fighter < ActiveRecord::Base
     exp = (experience / 1000).to_i
     case exp
     when 3
-      self.increment(:level)
+      self.increment(:level, 1)
     when 7
-      self.increment(:level)
+      self.increment(:level, 1)
     when 15
-      self.increment(:level)
+      self.increment(:level, 1)
     when 31
-      self.increment(:level)
+      self.increment(:level, 1)
     when 47
-      self.increment(:level)
+      self.increment(:level, 1)
     end
   end
 end
