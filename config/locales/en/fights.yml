@@ -1,4 +1,7 @@
 en:
   fights:
-    select_fighters:
+    new:
       available_fighters: Available fighters
+      available_opponents: Available opponents
+    create:
+      congratulations: Congratulations for the winner!

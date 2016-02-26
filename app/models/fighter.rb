@@ -27,18 +27,20 @@ class Fighter < ActiveRecord::Base
   end
 
   def check_for_level_up
-    exp = (experience / 1000).to_i
-    case exp
-    when 3
-      self.increment(:level, 1)
-    when 7
-      self.increment(:level, 1)
-    when 15
-      self.increment(:level, 1)
-    when 31
-      self.increment(:level, 1)
-    when 47
-      self.increment(:level, 1)
+    if [3000, 7000, 15000, 31000, 47000].include? experience
+      exp = (experience / 1000).to_i
+      case exp
+      when 3
+        self.increment(:level, 1)
+      when 7
+        self.increment(:level, 1)
+      when 15
+        self.increment(:level, 1)
+      when 31
+        self.increment(:level, 1)
+      when 47
+        self.increment(:level, 1)
+      end
     end
   end
 end

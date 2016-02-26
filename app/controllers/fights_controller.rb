@@ -25,7 +25,8 @@ class FightsController < ApplicationController
       winner = @fight.winner
       winner.increment(:experience, 100)
       winner.save
-      redirect_to fight_path(@fight)
+      flash[:notice] = t('.congratulations')
+      redirect_to fighter_path(winner)
     else
       flash.now[:alert] = t('.error')
       render :new

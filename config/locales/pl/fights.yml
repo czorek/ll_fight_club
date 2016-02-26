@@ -1,4 +1,7 @@
 pl:
   fights:
-    select_fighters:
+    new:
       available_fighters: Dostępni zawodnicy
+      available_opponents: Dostępni przeciwnicy
+    create:
+      congratulations: Gratulacje dla zwycięzcy!
