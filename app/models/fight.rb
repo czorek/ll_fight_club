@@ -29,11 +29,9 @@ class Fight < ActiveRecord::Base
           break
         end
       end
-      result[:winner] = result[:fighter] > result[:opponent] ? fighter : opponent
-    else
-      result[:winner] = result[:fighter] > result[:opponent] ? fighter : opponent
     end
 
+    result[:winner] = result[:fighter] > result[:opponent] ? fighter : opponent
     return result
   end
 end

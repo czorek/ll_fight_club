@@ -1,8 +1,7 @@
 class FightsController < ApplicationController
   before_action :possible_opponents, only: :new
   before_action :available_fighters, only: :new
-  before_action :preselected_fighter, only: [:new, :create]
-  before_action :preselected_opponent, only: [:new, :create]
+  before_action :preselected_fighter, only: :new
 
   def show
     @fight = Fight.find(params[:id])
@@ -13,15 +12,14 @@ class FightsController < ApplicationController
   end
 
   def create
-    @fighter  = preselected_fighter  || available_fighters.find(params[:fight][:selected_fighter])
-    @opponent = preselected_opponent || possible_opponents.find(params[:fight][:selected_opponent])
+    @fighter  = preselected_fighter || available_fighters.find(params[:fight][:selected_fighter])
+    @opponent = possible_opponents.find(params[:fight][:selected_opponent])
 
     result = Fight.determine_winner(@fighter, @opponent)
     winner = result[:winner]
     loser = winner == @fighter ? @opponent : @fighter
 
     @fight = Fight.new(winner: winner, loser: loser)
-    logger.info(@fight)
 
     if @fight.save
       redirect_to fight_path(@fight)

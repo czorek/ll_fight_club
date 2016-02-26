@@ -4,6 +4,7 @@
     <div id="fighter">
       <h3 id='fighters-name'><%= @preselected_fighter.name %></h3>
       <%= image_tag @preselected_fighter.avatar, id: 'fighters-avatar' %>
+      <%= f.hidden_field 'selected_fighter', value: @preselected_fighter.id %>
     </div>
 
   <% else %>
@@ -32,16 +33,6 @@
   <% end %>
 
   <h2 id='versus'>VS.</h2>
-
-  <% if @preselected_opponent %>
-
-    <div id="opponent">
-      <h3 id='fighters-name'><%= @preselected_opponent.name %></h3>
-      <%= image_tag @preselected_opponent.avatar, id: 'fighters-avatar' %>
-    </div>
-
-  <% else %>
-
     <div id="available-opponents-table">
       <h3><%= t('.available_opponents') %></h3>
       <table class="table table-condensed">
@@ -62,6 +53,5 @@
         <% end %>
       </table>
     </div>
-  <% end %>
   <%= f.button :submit %>
 <% end %>
