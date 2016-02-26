@@ -12,8 +12,8 @@ class Fight < ActiveRecord::Base
     fighters_dice = level_diff > 0 ? 6 + level_diff : 6
     opponents_dice = level_diff < 0 ? 6 - level_diff : 6
 
-    fighter.skills.pluck(:name, :id).to_h.each do |name, level|
-      opponent_skill_level = opponent.skills.find_by(name: name).level
+    fighter.skills.pluck(:name, :level).to_h.each do |name, level|
+      opponent_skill_level = opponent.skills.find_by(name: name).try(:level) || 0
 
       fighters_score  = level + rand(fighters_dice)
       opponents_score = opponent_skill_level + rand(opponents_dice)

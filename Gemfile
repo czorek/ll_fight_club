@@ -19,6 +19,7 @@ gem 'simple_form'
 gem 'mini_magick'
 gem 'carrierwave'
 gem 'enumerize'
+gem 'ffaker'
 
 gem 'devise'
 gem 'devise-i18n'

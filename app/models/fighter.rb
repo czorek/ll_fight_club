@@ -27,25 +27,25 @@ class Fighter < ActiveRecord::Base
   end
 
   def check_for_level_up
-    if [3000, 7000, 15000, 31000, 47000, 79000].include? experience
+    if [1000, 3000, 7000, 15000, 31000, 47000].include? experience
       exp = (experience / 1000).to_i
       case exp
-      when 3
+      when 1
         self.increment(:level, 1)
         self.skills.build(name: 'guns', level: rand(6))
-      when 7
+      when 3
         self.increment(:level, 1)
         self.skills.build(name: 'axes', level: rand(6))
-      when 15
+      when 7
         self.increment(:level, 1)
         self.skills.build(name: 'lasers', level: rand(6))
-      when 31
+      when 15
         self.increment(:level, 1)
         self.skills.build(name: 'chainsaws', level: rand(6))
-      when 47
+      when 31
         self.increment(:level, 1)
         self.skills.build(name: 'rockets', level: rand(6))
-      when 79
+      when 47
         self.increment(:level, 1)
         self.skills.build(name: 'tanks', level: rand(6))
       end
