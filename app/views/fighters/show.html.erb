@@ -1,4 +1,4 @@
-<h2 id='fighters-header'><%= @fighter.name %></h2>
+<h2 id='fighters-header'><%= @fighter.name %> lvl. <%= @fighter.level %></h2>
 <%= image_tag @fighter.avatar, id: 'fighters-avatar-large' %>
 
 <table class="table table-condensed fighters-skills-table">
@@ -22,10 +22,12 @@
   <tr>
     <th><%= t('.fights_won') %></th>
     <th><%= t('.fights_lost') %></th>
+    <th><%= t('.experience') %></th>
   </tr>
   <tr>
     <td><%= @fighter.won_fights.count %></td>
     <td><%= @fighter.lost_fights.count %></td>
+    <td><%= @fighter.experience %></td>
   </tr>
 </table>
 
