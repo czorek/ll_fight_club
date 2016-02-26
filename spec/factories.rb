@@ -1,33 +1,26 @@
 FactoryGirl.define do
-  factory :fighter, aliases: [:winner, :loser] do
-    first_name 'John'
-    last_name 'Rambo'
-    experience 100
-    description 'Sample description'
-    avatar 'avatar.png'
-    won_fights
-    lost_fights
-
-    factory :fighter_with_skills do
-      skills []
-    end
+  factory :user do
+    email { FFaker::Internet.email }
+    password 'password'
+    password_confirmation 'password'
   end
 
-  factory :skill do
-    name 'lasers'
+  factory :fighter, aliases: [:winner, :loser] do
+    sequence(:first_name) { FFaker::Name.first_name }
+    sequence(:last_name) { FFaker::Name.last_name }
+    experience 100
+    description FFaker::Lorem.paragraph
+    avatar { Rack::Test::UploadedFile.new(File.join(Rails.root, 'db/placeholders/250x300.png')) }
+  end
+
+  factory :melee_skill, class: 'Skill' do
+    name 'melee'
     level 3
-    fighter
+  end
 
-    factory :melee_skill do
-      name 'melee'
-      fighter
-    end
-
-    factory :knives_skill do
-      name 'knives'
-      level 2
-      fighter
-    end
+  factory :knives_skill, class: 'Skill' do
+    name 'knives'
+    level 2
   end
 
   factory :fight do
