@@ -71,10 +71,15 @@ header.navbar {
   background-color: #E89EB8;
   font-size: 18px;
   text-align: center;
+  margin-top: 5px;
 }
 
 .notice {
+  @extend .alert;
   background-color: #9EE8BD;
-  font-size: 18px;
-  text-align: center;
+}
+
+.simple_form {
+  margin: 0 auto 0 auto;
+  width: 40%;
 }

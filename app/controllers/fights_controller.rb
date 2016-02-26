@@ -33,14 +33,10 @@ class FightsController < ApplicationController
     end
   end
 
-  def select_fighters
-    @fighters  = current_user.fighters
-  end
-
   private
 
   def fight_params
-    params.require(:fight).permit(:winner_id, :loser_id, :selected_opponent, :selected_fighter)
+    params.require(:fight).permit(:selected_opponent, :selected_fighter)
   end
 
   def available_fighters

@@ -5,4 +5,5 @@ en:
       main_header: Welcome to Fight Club
       subheader: Win or Lose, no matter, just fight!
       register: Register
+      login: Login
       fight: Fight!

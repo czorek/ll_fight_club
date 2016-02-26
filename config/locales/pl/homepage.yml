@@ -4,5 +4,6 @@ pl:
       or: lub
       main_header: Witamy w Fight Club
       register: Rejestracja
+      login: Zaloguj się
       subheader: Zwyciężaj, przegrywaj, po prostu walcz!
       fight: 'Walcz!'

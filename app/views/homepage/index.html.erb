@@ -16,5 +16,9 @@
     <%= link_to new_user_registration_path do %>
       <p class="btn btn-primary index-button"><%= t(".register") %></p>
     <% end %>
+    <span><%= t('.or') %></span>
+    <%= link_to new_user_session_path do %>
+      <p class="btn btn-info"><%= t(".login") %></p>
+    <% end %>
   <% end %>
 </div>
