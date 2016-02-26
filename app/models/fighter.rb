@@ -10,6 +10,7 @@ class Fighter < ActiveRecord::Base
   validates :level, numericality: { only_integer: true }
 
   before_validation :assign_starter_skills
+  after_save :check_for_level_up
 
   mount_uploader :avatar, AvatarUploader
 
@@ -20,7 +21,24 @@ class Fighter < ActiveRecord::Base
   private
 
   def assign_starter_skills
+    return unless skills.empty?
     melee  = self.skills.build(name: 'melee', level: rand(6))
     knives = self.skills.build(name: 'knives', level: (5 - self.skills.first.level))
+  end
+
+  def check_for_level_up
+    exp = (experience / 1000).to_i
+    case exp
+    when 3
+      self.increment(:level)
+    when 7
+      self.increment(:level)
+    when 15
+      self.increment(:level)
+    when 31
+      self.increment(:level)
+    when 47
+      self.increment(:level)
+    end
   end
 end
