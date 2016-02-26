@@ -1,7 +1,8 @@
 class FightsController < ApplicationController
-  before_action :possible_opponents, only: [:select_fighters, :new]
-  before_action :available_fighters, only: [:select_fighters, :new]
-  before_action :preselected_fighter, only: [:select_fighters, :new]
+  before_action :possible_opponents, only: :new
+  before_action :available_fighters, only: :new
+  before_action :preselected_fighter, only: [:new, :create]
+  before_action :preselected_opponent, only: [:new, :create]
 
   def show
     @fight = Fight.find(params[:id])
@@ -12,9 +13,16 @@ class FightsController < ApplicationController
   end
 
   def create
-    @fighter  = preselected_fighter  || available_fighters.find(params[:selected_fighter])
-    @opponent = preselected_opponent || possible_opponents.find(params[:selected_opponent])
-    @fight = Fight.build(fight_params)
+    @fighter  = preselected_fighter  || available_fighters.find(params[:fight][:selected_fighter])
+    @opponent = preselected_opponent || possible_opponents.find(params[:fight][:selected_opponent])
+
+    result = Fight.determine_winner(@fighter, @opponent)
+    winner = result[:winner]
+    loser = winner == @fighter ? @opponent : @fighter
+
+    @fight = Fight.new(winner: winner, loser: loser)
+    logger.info(@fight)
+
     if @fight.save
       redirect_to fight_path(@fight)
     else
@@ -30,7 +38,7 @@ class FightsController < ApplicationController
   private
 
   def fight_params
-    params.require(:fight).permit(:winner_id, :loser_id, )
+    params.require(:fight).permit(:winner_id, :loser_id, :selected_opponent, :selected_fighter)
   end
 
   def available_fighters
@@ -38,6 +46,6 @@ class FightsController < ApplicationController
   end
 
   def possible_opponents
-    @possible_opponents |= Fighter.where.not(user: current_user)
+    @possible_opponents ||= Fighter.where.not(user: current_user)
   end
 end

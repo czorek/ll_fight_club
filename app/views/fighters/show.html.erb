@@ -29,6 +29,6 @@
   </tr>
 </table>
 
-<%= link_to select_fighters_path(selected_fighter: @fighter) do %>
+<%= link_to new_fight_path(selected_fighter: @fighter) do %>
   <button id='fight-button' class='btn btn-danger'><%= t("fighters.index.fight") %></button>
 <% end %>

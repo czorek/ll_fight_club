@@ -1,2 +1,67 @@
-<h1>Fights#new</h1>
-<p>Find me in app/views/fights/new.html.erb</p>
+<%= form_for @fight do |f| %>
+  <% if @preselected_fighter %>
+
+    <div id="fighter">
+      <h3 id='fighters-name'><%= @preselected_fighter.name %></h3>
+      <%= image_tag @preselected_fighter.avatar, id: 'fighters-avatar' %>
+    </div>
+
+  <% else %>
+
+    <div id="available-fighters-table">
+      <h3><%= t('.available_fighters') %></h3>
+      <table class="table table-condensed">
+        <tr>
+          <th><%= t(".avatar") %></th>
+          <th><%= t(".name") %></th>
+          <th><%= t(".level") %></th>
+        </tr>
+        <% @available_fighters.each do |fighter| %>
+          <tr>
+            <td><%= image_tag(fighter.avatar.thumb) %></td>
+            <td><span class='fighters-name'><%= link_to fighter.name, fighter_path(fighter) %></span></td>
+            <td><%= fighter.level %></td>
+            <td>
+              <%= f.radio_button('selected_fighter', fighter.id, ) %>
+            </td>
+          </tr>
+        <% end %>
+
+      </table>
+    </div>
+  <% end %>
+
+  <h2 id='versus'>VS.</h2>
+
+  <% if @preselected_opponent %>
+
+    <div id="opponent">
+      <h3 id='fighters-name'><%= @preselected_opponent.name %></h3>
+      <%= image_tag @preselected_opponent.avatar, id: 'fighters-avatar' %>
+    </div>
+
+  <% else %>
+
+    <div id="available-opponents-table">
+      <h3><%= t('.available_opponents') %></h3>
+      <table class="table table-condensed">
+        <tr>
+          <th><%= t(".avatar") %></th>
+          <th><%= t(".name") %></th>
+          <th><%= t(".level") %></th>
+        </tr>
+        <% @possible_opponents.each do |opponent| %>
+          <tr>
+            <td><%= image_tag(opponent.avatar.thumb) %></td>
+            <td><span class='fighters-name'><%= link_to opponent.name, fighter_path(opponent) %></span></td>
+            <td><%= opponent.level %></td>
+            <td>
+              <%= f.radio_button('selected_opponent', opponent.id, ) %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  <% end %>
+  <%= f.button :submit %>
+<% end %>
